@@ -61,7 +61,7 @@ if [[ -z "${POLICY_FILES}" ]]; then
     exit ${RC}
 fi
 
-ARG=$(--file)
+ARG='--file'
 
 while read -r file;
 do
