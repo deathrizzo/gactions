@@ -1,0 +1,16 @@
+name: iam-lint
+on: 
+  push:
+    paths:
+      - '[A-Z][A-Z]/svc-policies/'
+
+jobs: 
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: ./.github/actions/iam-lint
+
+
+
+
