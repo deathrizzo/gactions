@@ -1,7 +1,8 @@
 name: iam-lint
-on: push
-  paths:
-    - 'AB/svc-policies/'
+on: 
+  push:
+    paths:
+      - 'AB/svc-policies/'
 
 jobs: 
   lint:
