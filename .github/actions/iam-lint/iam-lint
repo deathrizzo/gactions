@@ -61,13 +61,11 @@ if [[ -z "${POLICY_FILES}" ]]; then
     exit ${RC}
 fi
 
-ARG='--file'
-
 while read -r file;
 do
     echo -n "==> Linting $file... "
 
-    OUTPUT="$(parliament "${PARLIAMENT_ARGS[@]}" "$ARG" "${file}" 2>&1 || true)"
+    OUTPUT="$(parliament "${PARLIAMENT_ARGS[@]}" "${file}" 2>&1 || true)"
     if [[ -n "${OUTPUT}" ]]; then
         red "FAILED"
         echo "${OUTPUT}"
